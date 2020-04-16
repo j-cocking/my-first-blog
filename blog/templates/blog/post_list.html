@@ -7,27 +7,14 @@
         <h1>My First Page</h1>
       </div>
 
-      <div>
-        <h2>Useful Links</h2>
-          <P>Here is a <a href=https://www.youtube.com/channel/UCg_vb6X8dFkbNAoU9gsMRyw/>link</a> to my YouTube channel</P>
-      </div>
-
-      <div>
-        <h2>Coding to do list</h2>
-      </div>
-
-<div>
-        <ul><li>Create this page</li><li>Create a Blog</li><li>Create my own Project</li><li>Create my own page for the company</li><ul>
-</div>
-        <div>
-          <h2>Ideas</h2>
-          <p>Images</p>
-          <p>Link behind the images to individual channels</p>
-          <p>Sound bites</p>
-          <p>Can I play a video in the background</p>
-          <p>Bios</p>
-            </div>
-
+{% for post in posts %}
+  <div>
+    <p>Published: {{post.published_date}}</p>
+    <h2>{{post.title}}</h2>
+    <p>{{post.text|linebreaksbr}}</p>
+    <p>Author: {{post.author}}</P>
+  </div>
+{% endfor %}
       </body>
 
 </HTML>
